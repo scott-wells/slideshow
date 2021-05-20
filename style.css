@@ -9,9 +9,12 @@ html {
 }
 
 /* SLIDESHOW */
+.active {
+    opacity: 1;
+}
+
 .slideshow {
-    background-color: black;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     position: relative;
     overflow: hidden;
@@ -20,12 +23,16 @@ html {
     width: inherit;
     height: inherit;
     position: absolute;
-    /* opacity: 0; */
+    top: 0;
+    left: 0;
 }
 .slides img {
+    position: inherit;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
 }
 .slideshow .arrows {
     padding: 1rem;
@@ -37,11 +44,32 @@ html {
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
+    z-index: 2;
 }
 .arrows .arrow-next svg,
 .arrows .arrow-back svg {
     cursor: pointer;
-    stroke-width: 4px;
-    height: 64px;
+    stroke-width: 3.5px;
+    height: 36px;
     width: auto;
 }
+.slideshow .dots {
+    padding-right: 2rem;
+    position: absolute;
+    top: 75%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+.dots .dot {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.250);
+    width: 14px;
+    height: 14px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.750);
+}
+
