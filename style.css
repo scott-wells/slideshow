@@ -9,8 +9,9 @@ html {
 }
 
 /* SLIDESHOW */
-.active {
+.slides img.active {
     opacity: 1;
+    transition: opacity 2s ease-in-out;
 }
 
 .slideshow {
@@ -32,7 +33,6 @@ html {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 2s ease-in-out;
 }
 .slideshow .arrows {
     padding: 1rem;
